@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Product</title>
+    <title>Metaverse Laptop</title>
+   
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+
+    <link rel="stylesheet"  href={% static   "../css/reponsiveProduct.css" %}  >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body>
+{% block content %}
+            <script>
+    {% if messages %}
+        {% for message in messages %}
+            Toastify({
+                text: "{{ message }}",
+                duration: 3000,
+                gravity: "center",
+                position: "center",
+                offset: {
+                    x: 0,
+                    y: 50
+                },
+                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                stopOnFocus: true,
+            }).showToast();
+        {% endfor %}
+    {% endif %}
+</script>
+ 
+
+
+
+
+
+
+
+  <h2>Add a new laptop</h2>
+ <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ laptop_form.as_p }}
+    {{image_form.management_fomr}}
+    {% for form in image_form  %}   
+      {{form}}
+      {% endfor %}
+    <input type="submit" value="Add Laptop">
+  </form>
+{% endblock %}
+
+</body>
+
+
+<style>
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0062cc;
+  cursor: pointer;
+}
+
+.errorlist {
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.errorlist li {
+  margin: 5px 0;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+</style>

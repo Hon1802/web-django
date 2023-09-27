@@ -1,0 +1,141 @@
+    /*great*/
+    
+    .menu_top-pro {
+        position: relative;
+        width: 100%;
+        height: 650px;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/002/375/040/original/modern-white-background-free-vector.jpg);
+        /*background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(250, 255, 255, 255));*/
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+    .menu_top-pro-content {
+        width: 90%;
+        height: 90%;
+        position: relative;
+        background: #e5dddc;
+        left: 5%;
+        top: 10%;
+    }
+    
+    .pannel-white {
+        width: 745px;
+        height: 55%;
+        position: relative;
+        top: 95px;
+        left: 50%;
+        background: #ffffff;
+        font-size: 14px;
+        padding: 25px;
+    }
+    
+    .pannel-white span {
+        position: relative;
+        top: 34%;
+        left: 25%;
+        font-size: 20px;
+    }
+    
+    .menu_top-pro-content img {
+        width: 30%;
+        position: relative;
+        top: -3%;
+        left: 11%;
+        z-index: 999;
+    }
+    /*2*/
+    
+    .menu_top-pro2 {
+        position: relative;
+        top: 60px;
+        width: 100%;
+        height: 800px;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/002/375/040/original/modern-white-background-free-vector.jpg);
+        /*background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(250, 255, 255, 255));*/
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+    .menu_top-pro-content2 {
+        width: 90%;
+        height: 90%;
+        position: relative;
+        background: #e5dddc;
+        left: 5%;
+        top: 10%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .menu_top-pro-content2 span {
+        font-size: 20px;
+    }
+    
+    .content-img1 {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    
+    .content-img2 {
+        margin-top: 12%;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    
+    .content-img3 {
+        margin-top: 21%;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+    
+    .content-img1 .conten1 {
+        position: relative;
+        top: 4%;
+        left: 20%;
+    }
+    
+    .content-img2 .conten2 {
+        position: relative;
+        top: -108%;
+        left: 23%;
+    }
+    
+    .content-img3 .conten3 {
+        position: relative;
+        top: -148%;
+        left: 22%;
+    }
+    
+    .menu_top-pro3 {
+        top: 20px;
+        position: relative;
+        width: 100%;
+        height: 650px;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/002/375/040/original/modern-white-background-free-vector.jpg);
+        /*background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(250, 255, 255, 255));*/
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+    .pannel-white2 {
+        width: 41%;
+        height: 55%;
+        position: relative;
+        top: -261px;
+        left: 50%;
+        background: #ffffff;
+        font-size: 14px;
+        padding: 25px;
+    }
+    
+    .pannel-white2 span {
+        position: relative;
+        top: 9%;
+        left: 5%;
+        font-size: 20px;
+    }

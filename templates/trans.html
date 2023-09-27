@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+    {% extends 'base.html' %}
+    {% load static %}
+<head>
+    {% block content %}
+    {% include 'header.html' %}
+     {% load static %}
+    <title>Payment Paypal</title>
+    <link rel="icon" type="image/x-icon" href="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sneakers-logo-design-template-3ed6589433370a39aa9478060e557bfd_screen.jpg?ts=1646104759">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //custom-theme -->
+    <link href= "{% static "/css/trans.css" %}"    rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+    <link href=      "{% static  '/static/image/logo-re.png' %}"     rel="icon">
+    <link href=       "{% static    "/css/style.css" %}"    rel="stylesheet">
+    <link href=  "{% static  "/fonts/themify-icons/themify-icons.css"%}"    rel="stylesheet">
+    <link href="{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.css"  %}"  rel="stylesheet">
+    <link href="{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}"   rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="{% static  "/css/responsiveIndex.css"  %}"  rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/shop.css" type="text/css" media="screen" property="" />
+    <link href="css/style7.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Owl-carousel-CSS -->
+    <link rel="stylesheet" type="text/css" href="css/trans.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<body style="margin-top: 5%;">
+<script src="https://www.paypal.com/sdk/js?client-id=AUWfXUeBuIo-uiW1c-nYdbCoT77iWdyx93uB08lv0Xikfx3qANnIZLlTEVRCSscSpLGH6n1jHXBeY46X&currency=USD"></script>
+<main class="main_payment">
+    <script>
+    {% if messages %}
+        {% for message in messages %}
+            Toastify({
+                text: "{{ message }}",
+                duration: 3000,
+                gravity: "center",
+                position: "center",
+                offset: {
+                    x: 0,
+                    y: 50
+                },
+                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                stopOnFocus: true,
+            }).showToast();
+        {% endfor %}
+    {% endif %}
+</script>
+    <div class="container">
+        <div class="payment-row">
+            <div class="row-left">
+                <div class="p-4" style="width: 90%; text-align: center;">
+                    <h1>SHIPMENT DETAILS</h1>
+                    <form action="{% url 'checkout'%}" class="flex flex-col gap-5 sm:gap-10 mt-4 py-2"  method="post">
+                    {% csrf_token %}
+                        <div>
+                            <div class="relative w-full">
+                                <input label="Họ và Tên"
+                                       class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
+                                       name="customerName" value="{{customer.last_name}}" /><label
+                                    class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Họ
+                                và Tên</label>
+                            </div>
+                        </div>
+                        <div class="relative w-full" >
+                            <input label="Email"
+                                   class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
+                                   name="customerEmail" /><label
+                                class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Email</label>
+                        </div>
+                        <div>
+                            <div class="relative w-full">
+                                <input label="Số điện thoại"
+                                       class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
+                                       name="customerPhone"  value="{{customer.email}}"/><label
+                                    class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Số
+                                điện thoại</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="relative w-full">
+                                <input label="Địa chỉ "
+                                       class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
+                                       name="address" value="{{customer.address}}" /><label
+                                    class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Địa chỉ</label>
+                            </div>
+                        </div>
+                        <div class="content-right-payment">
+                            <button type="submit">Continue to pay</button>
+                        </div>
+                        <div hidden>
+                            ${sessionScope['actionCode'] = 'trans'}
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+            <div class="row-right">
+                <div class="method-delivery">
+                    <p style="font-weight: bold;">Method to delivery</p>
+                    <div class="content-row-left">
+                        <input name="method-payment1" type="radio"> <label >Fast delivery</label>
+                    </div>
+                </div>
+                <div class="method-payment">
+                    <p style="font-weight: bold;">Method to payment</p>
+                    <p>All transactions are secure and encrypted. Credit card
+                        information will not be saved.</p>
+
+                    <div class="method-payment-left">
+                        <input name="method-payment" type="radio"> <label >Pay at home (COD)</label>
+                    </div>
+
+                    <!--paypal-->
+                    <p style="font-weight: bold; text-align: center;">Pay with
+                        Paypal</p>
+                    <script
+                            src="https://www.paypal.com/sdk/js?client-id=AUWfXUeBuIo-uiW1c-nYdbCoT77iWdyx93uB08lv0Xikfx3qANnIZLlTEVRCSscSpLGH6n1jHXBeY46X&currency=USD"></script>
+                    <!-- Set up a container element for the button -->
+                    <div id="paypal-button-container"></div>
+                    <!--scrip paypal-->
+                    <script>
+                        var totalMoney = '80.00';
+                        var exchangeRate = 23;
+                        paypal.Buttons({
+                            // Sets up the transaction when a payment button is clicked
+                            createOrder: (data, actions) => {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: (totalMoney / exchangeRate).toFixed(2),// dat tien vo day// in here
+                                        }
+                                    }]
+                                });
+                            },
+                            // Finalize the transaction after payer approval
+                            onApprove: (data, actions) => {
+                                return actions.order.capture().then(function(orderData) {
+                                    // Successful capture! For dev/demo purposes:
+                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                    const transaction11 = orderData.status;
+                                    alert(`\n\n"Thank you for your payment!`);
+                                    // When ready to go live, remove the alert and show a success message within this page. For example:
+                                    const element = document.getElementById('paypal-button-container');
+                                    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                    // Or go to another URL:  actions.redirect('thank_you.html');
+
+                                });
+                            }
+                        }).render('#paypal-button-container');
+                    </script>
+
+                    <script>
+                        createOrder: (data, actions) => {
+                            return actions.order.create({
+                                "purchase_units": [{
+                                    "amount": {
+                                        "currency_code": "USD",
+                                        "value": "100",
+                                        "breakdown": {
+                                            "item_total": {  /* Required when including the items array */
+                                                "currency_code": "USD",
+                                                "value": "100"
+                                            }
+                                        }
+                                    },
+                                    "items": [
+                                        {
+                                            "name": "First Product Name", /* Shows within upper-right dropdown during payment approval */
+                                            "description": "Optional descriptive text..", /* Item details will also be in the completed paypal.com transaction view */
+                                            "unit_amount": {
+                                                "currency_code": "USD",
+                                                "value": "50"
+                                            },
+                                            "quantity": "2"
+                                        },
+                                    ]
+                                }]
+                            });
+                        }
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+</body>
+{% endblock %}
+</html>

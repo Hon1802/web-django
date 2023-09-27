@@ -1,0 +1,22 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../static/image/logo-re.png" rel="icon">
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="../static/css/rootStyle.css">
+</head>
+<body>
+    <!-- Nội dung chung của trang web -->
+    <div class="root-container">
+        {% block content %}    
+        {% endblock %}      
+    </div>    
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>

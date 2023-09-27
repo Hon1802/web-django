@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best Shop - For admin</title>
+   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href=      "{% static  '/image/logo-re.png' %}"     rel="icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/admin.css" class="css">
+    <link href="fonts/themify-icons/themify-icons.css" rel="stylesheet">
+    <link href="fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+</head>
+<body>
+    <div class="newcontainer">
+        <div class="new2">
+            <div class="title_new">
+                <h2>Best SHOP</h2>
+            </div>
+            <div class="image_new">
+                <img src="../static/image/ava.jpg" alt="avatar" class="round-image">
+            </div>
+            <div class="txt_new">
+                <h3>Wellcome :</h3>
+                <p> Nguyen Van A </p>
+            </div>
+            <div class="btn_log">
+                <button >LOGOUT <i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+        <div class="new1" id="main">
+            <h1 class="title"><strong>DASHBOARD</strong></h1>
+            <!-- <button class="logout">LOGOUT <i class="fas fa-sign-out-alt"></i></button> -->
+            <div class="container">
+                <div class="table-responsive">
+                    <div class="table-wrapper" style="width: auto">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h2>Quản lý <b>Chi tiết giỏ hàng</b></h2>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a id="addRow4" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm hàng</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="table5" class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>MÃ GIỎ HÀNG</th>
+                                <th>MÃ LAPTOP</th>
+                                <th>SỐ LƯỢNG</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>V4R53500U001W</td>
+                                <td>Laptop Dell Vostro 14 3405</td>
+                                <td>Dell</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a href="#">Previous</a></li>
+                                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="container">
+                <div class="table-responsive">
+                    <div class="table-wrapper" style="width: auto">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h2>Quản lý <b>Giỏ hàng</b></h2>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <a id="addRow6" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm hàng</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="table7" class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>MÃ GIỎ HÀNG</th>
+                                <th>MÃ KHÁCH HÀNG</th>
+                                <th>NGÀY XUẤT</th>
+                                <th>TRỊ GIÁ</th>
+                                <th>MÃ KHUYẾN MÃI</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>V4R53500U001W</td>
+                                <td>Laptop Dell Vostro 14 3405</td>
+                                <td>Dell</td>
+                                <td>16.190.000</td>
+                                <td>Dell</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a href="#">Previous</a></li>
+                                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="container">
+                <div id="table-dell" class="table-responsive table-tabs">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h2>Quản lý <b>Laptop</b></h2>
+
+                                </div>
+                                
+                                <div class="col-xs-6">
+                                    <a     href={% url 'add_laptop' %}      id="addRow1" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm hàng</span></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <table id="table2" class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>MÃ LAPTOP</th>
+                                <th>TÊN LAPTOP</th>
+                                <th>HÃNG</th>
+                                <th>GIÁ BÁN</th>
+                                <th>CPU</th>
+                                <th>GPU</th>
+                                <th>RAM</th>
+                                <th>MÀN HÌNH</th>
+                                <th>Ổ CỨNG</th>
+                        
+                                <th>PIN</th>
+                                <th>KHỐI LƯỢNG</th>
+                            
+                                <th>Is active</th>
+
+                                <th>Edit</th>
+                                <th>Edit Image</th>
+                                <th>Delete</th> 
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% block content %}
+
+            {% for laptop in laptops %}
+        <tr>
+                                
+                                <td>{{laptop.id}}</td>
+                                <td>{{laptop.name}}</td>
+                                <td>{{laptop.brand}}</td>
+                                <td>{{laptop.price}}</td>
+                            
+                                <td>{{laptop.processor}}</td>
+                                <td>{{laptop.VGA}}</td>
+                                <td>{{laptop.ram}}</td>
+                                <td>{{laptop.display_size}}"</td>
+                                <td>{{laptop.hard_disk}}</td>
+                                <td>{{laptop.battery_life}}</td>
+                            
+                                <td>{{laptop.weight}}</td>
+                            
+                            
+                                <td>
+                                {% if laptop.is_active%}
+                                <i class="fa fa-check" style="font-size:48px;color:red"></i>
+                                {% else %}
+                                    <span style='font-size:20px;'>&#10006;</span>
+                                {% endif %}
+                            </td>
+
+                                
+                                <td> 
+                                <a href="{% url 'edit_laptop' pk=laptop.pk %}">
+                <button style="font-size:24px"><i class="fas fa-pencil-alt"></i></button>
+            </a>
+                                </td>
+                                <td> 
+                                <a href="{% url 'edit_images' pk=laptop.pk %}">
+            <button style="font-size:9px">Button <i class="material-icons">add_a_photo</i></button>
+
+            </a>
+                                </td>
+                                <td> 
+                                <a href="{% url 'delete_laptop' pk=laptop.pk %}">
+        
+        <i class="material-icons" style="font-size:36px">delete</i>
+            </a>
+                                </td>
+
+                        
+
+                                
+
+                            
+                            </tr>
+            {% endfor %}
+        
+        {% endblock %}   
+                        
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a href="#">Previous</a></li>
+                                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+<div id="thongbao" style="z-index: 1000">
+    <div class="register js-register-container">
+        <form class="register-form">
+            <div class="input-register">
+                Bạn chắc chứ?
+            </div>
+            <div class="register-div">
+                <button type="button" id="yes" class="btn-register" >Có</button>
+                <button type="button" id="no" class="btn-register">Không</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Back to top-->
+<button id="myBtn">&#8593;</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script src="../static/js/bstable.js"></script>
+<script>
+    var example1 = new BSTable("table1", {
+        $addButton: $('#addRow'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example1.init();
+    var example2 = new BSTable("table2", {
+        $addButton: $('#addRow1'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example2.init();
+    var example3 = new BSTable("table3", {
+        $addButton: $('#addRow2'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example3.init();
+    var example4 = new BSTable("table4", {
+        $addButton: $('#addRow3'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example4.init();
+    var example5 = new BSTable("table5", {
+        $addButton: $('#addRow4'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example5.init();
+    var example6 = new BSTable("table6", {
+        $addButton: $('#addRow5'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example6.init();
+    var example7 = new BSTable("table7", {
+        $addButton: $('#addRow6'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example7.init();
+    var example8 = new BSTable("table8", {
+        $addButton: $('#addRow7'),
+        advanced: {
+            columnLabel: ''
+        }
+    });
+    example8.init();
+</script>
+
+
+<style>
+
+
+
+/* Form container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Form */
+form {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Form title */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form fields */
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-field input[type="text"],
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.form-field textarea {
+  height: 100px;
+}
+
+.form-field input[type="file"] {
+  margin-top: 10px;
+}
+
+</style>
+<script src="../static/js/BackToTop.js"></script>
+<script src="../static/js/tabs.js"></script>
+<!--<script src="../js/tabs-table.js"></script>-->
+</html>
+

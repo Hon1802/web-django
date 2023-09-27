@@ -1,0 +1,318 @@
+[
+    {
+      "model": "CustomerSite.Brand",
+      "pk": 1,
+      "fields": {
+        "name": "Dell"
+      }
+    },
+    {
+      "model": "CustomerSite.Brand",
+      "pk": 2,
+      "fields": {
+        "name": "HP"
+      }
+    },
+    {
+      "model": "CustomerSite.Brand",
+      "pk": 3,
+      "fields": {
+        "name": "Msi"
+      }
+    },
+    {
+      "model": "CustomerSite.Brand",
+      "pk": 4,
+      "fields": {
+        "name": "Asus"
+      }
+    },
+    {
+      "model": "CustomerSite.Brand",
+      "pk": 5,
+      "fields": {
+        "name": "Acer"
+      }
+    },
+    
+  
+
+    {
+      "model": "CustomerSite.Laptop",
+      "pk": 1,
+      "fields": {
+        "name": "Dell Inspiron",
+        "brand": 1,
+        "price": 190000000.00,
+        "description": "A powerful laptop with a 14-inch display.",
+        "image": ["image/dell/dell1/dell1.png","image/dell/dell1/dell2.png","image/dell/dell1/dell3.png","image/dell/dell1/dell4.png","image/dell/dell1/dell5.png","image/dell/dell1/dell6.png"],
+        "processor":" Intel® Core™ i5 - 1135G7 (8M Cache), 2.4 Ghz up to 4.2 Ghz",
+        "ram":"8GB DDR4 3200MHz",
+        "hard_disk":"256GB SSD NVMe",
+        "display_size":"14.1 inch anti glare FHD IPS ( 1920x1080 )",
+        "weight":"2,40 Kg",
+        "VGA":"NVIDIA® GeForce® GTX1650 with 4GB GDDR6 / AMD Radeon™ Graphics",
+        "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+        "battery_life":"4 Cells 70 Whrs Battery",
+        "warranty":24,
+        "quantity":10,
+        "vourch":1
+
+        
+      }
+      
+
+
+    },
+    {
+      "model": "CustomerSite.Laptop",
+      "pk": 2,
+      "fields": {
+        "name": "Dell Precision 5570",
+        "brand": 1,
+        "price": 190000000.00,
+        "description": "A powerful laptop with a 14-inch display.",
+        "image": ["image/dell/dell2/dell1.png","image/dell/dell2/dell2.png","image/dell/dell2/dell3.png","image/dell/dell2/dell4.png","image/dell/dell2/dell5.png","image/dell/dell2/dell6.png"],
+        "processor":" Intel® Core™ i7 - 1135G7 (8M Cache), 2.4 Ghz up to 4.2 Ghz",
+        "ram":"16GB DDR5 4800MHz",
+        "hard_disk":" 512GB SSD Nvme",
+        "display_size":"14.1 inch anti glare FHD IPS ( 1920x1080 )",
+        "weight":"2,40 Kg",
+        "VGA":"NVIDIA® GeForce® GTX1650 with 4GB GDDR6 / AMD Radeon™ Graphics",
+        "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+        "battery_life":"4 Cells 70 Whrs Battery",
+        "warranty":24,
+        "quantity":10,
+        "vourch":1
+
+
+        
+      }
+    },
+    {
+      "model": "CustomerSite.Laptop",
+      "pk": 3,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    },
+    {
+      "model": "CustomerSite.Laptop",
+      "pk": 4,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 5,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 6,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 7,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 7,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 9,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 10,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 11,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }, {
+      "model": "CustomerSite.Laptop",
+      "pk": 12,
+      "fields": {
+          "name": "Laptop Dell 123",
+          "brand": 2,
+          "price": 15000000.00,
+          "description": "This is laptop 2",
+          "image": ["image/dell/dell3/dell1.png","image/dell/dell3/dell2.png","image/dell/dell3/dell3.png","image/dell/dell3/dell4.png","image/dell/dell3/dell5.png","image/dell/dell3/dell6.png"],    
+          "processor": "Intel Core i9",
+          "ram": "16GB",
+          "hard_disk": "1TB SSD",
+          "display_size": "17.3 inches",
+          "weight": "5.3 pounds",
+          "battery_life": "8 hours",
+          "wireless":"Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1",
+          "VGA": "Nvidia GeForce RTX 3080",
+          "warranty": 12,
+          "quantity":10,
+          "vourch":1
+
+      }
+    }
+  
+    
+    
+    
+  ]

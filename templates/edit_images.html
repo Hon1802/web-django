@@ -1,0 +1,11 @@
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+{%block content %}
+  
+
+  {% for image in laptop.images.all %}
+ 
+   <button> <a  href={% url 'edit_image' pk=image.pk %} style='font-size:24px'>Edit <i class='far fa-edit'></i></a>  </button>
+  <img src="{{ image.image.url }}" alt="{{ laptop.brand }} {{ laptop.model }} Image">
+{% endfor %}
+{% endblock %}

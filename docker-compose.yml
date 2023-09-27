@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: laptopshop_db
+    
+    ports:
+      - "3306:3306"
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=localhost
+      - DATABASE_NAME=laptopshop_db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=password
+      - DATABASE_PORT=3306

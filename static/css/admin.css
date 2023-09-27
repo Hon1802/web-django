@@ -1,0 +1,621 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    font-family: roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#main {
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: flex-start;*/
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+
+#main .logout{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    background-color: #d42333;
+    color: white;
+    border: none;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.container {
+    width: inherit;
+    height: auto;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    margin: 32px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    display: inline-grid;
+    overflow: auto;
+}
+
+
+.input-sm {
+    width: fit-content;
+}
+
+.table {
+    white-space: nowrap;
+}
+
+.btn-group {
+    display: flex;
+}
+
+#bAcep,
+#bCanc,
+#bDel,
+#bEdit {
+    font-size: 25px;
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
+#bEdit {
+    color: #ffc720;
+}
+
+#bCanc,
+#bDel {
+    color: #f5564a;
+}
+
+#bAcep{
+    color: #28a745;
+}
+
+.clearfix {
+    width: fit-content;
+}
+
+.table-responsive {
+    margin: 30px 0;
+}
+
+/*.table-tabs{*/
+/*    display: none;*/
+/*}*/
+
+.table-wrapper {
+    width: fit-content;
+    /*min-width: 1000px;*/
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 15px;
+    background: #435d7d;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.table-title .btn-group {
+    float: right;
+}
+.table-title .btn {
+    color: #fff;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}
+.table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border: 1px solid #e9e9e9;
+}
+table.table tr th:first-child {
+    width: 60px;
+}
+table.table tr th:last-child {
+    width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 22px;
+    margin: 0 5px;
+}
+table.table td a {
+    font-weight: bold;
+    color: #566787;
+    display: inline-block;
+    text-decoration: none;
+    outline: none !important;
+}
+table.table td a:hover {
+    color: #2196F3;
+}
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #F44336;
+}
+table.table td i {
+    font-size: 19px;
+}
+table.table .avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.pagination {
+    float: right;
+    margin: 0 0 5px;
+}
+.pagination li a {
+    border: none;
+    font-size: 13px;
+    min-width: 30px;
+    min-height: 30px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 2px !important;
+    text-align: center;
+    padding: 0 6px;
+}
+.pagination li a:hover {
+    color: #666;
+}
+.pagination li.active a, .pagination li.active a.page-link {
+    background: #03A9F4;
+}
+.pagination li.active a:hover {
+    background: #0397d6;
+}
+.pagination li.disabled i {
+    color: #ccc;
+}
+.pagination li i {
+    font-size: 16px;
+    padding-top: 6px
+}
+.hint-text {
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+/* Custom checkbox */
+.custom-checkbox {
+    position: relative;
+}
+.custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    margin: 5px 0 0 3px;
+    z-index: 9;
+}
+.custom-checkbox label:before{
+    width: 18px;
+    height: 18px;
+}
+.custom-checkbox label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    transform: inherit;
+    z-index: 3;
+    transform: rotateZ(45deg);
+}
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+    border-color: #03A9F4;
+    background: #03A9F4;
+}
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    border-color: #fff;
+}
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
+    color: #b8b8b8;
+    cursor: auto;
+    box-shadow: none;
+    background: #ddd;
+}
+/* Modal styles */
+.modal .modal-dialog {
+    max-width: 400px;
+}
+.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+    padding: 20px 30px;
+}
+.modal .modal-content {
+    border-radius: 3px;
+}
+.modal .modal-footer {
+    background: #ecf0f1;
+    border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+    display: inline-block;
+}
+.modal .form-control {
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: #dddddd;
+}
+.modal textarea.form-control {
+    resize: vertical;
+}
+.modal .btn {
+    border-radius: 2px;
+    min-width: 100px;
+}
+.modal form label {
+    font-weight: normal;
+}
+
+#main .container .details-laptop {
+    /*display: flex;*/
+    display: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 25px 0;
+}
+
+/* định dạng thẻ div chưa các button tab */
+div.tab {
+    overflow: auto;
+    border-bottom: 1px solid #cccccc;
+    /*border: 1px solid #ccc;*/
+    /*background-color: #f1f1f1;*/
+}
+
+/* định dạng các button tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* đổi màu khi một button tab được hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* đổi màu nền cho tab đang được hiển thị nội dung */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+#main .details-laptop .logo{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    margin: 0 26px;
+}
+
+#main .details-laptop .logo:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+#main .details-laptop .details {
+    flex: 1;
+    height: 100%;
+    border-radius: 10px;
+    margin: 0 48px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: column;
+    padding: 0 32px;
+}
+
+#main .details .details-number{
+    /*flex: 1;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    line-height: 65px;
+    cursor: default;
+}
+
+#main .details .details-title {
+    flex: 1;
+    display: flex;
+    color: white;
+    font-size: 16px;
+    cursor: default;
+}
+
+.bg-red {
+    background-color: #ff5252!important;
+}
+
+.bg-green{
+    background-color: #11c15b!important;
+}
+
+.bg-blue {
+    background-color: #448aff!important;
+}
+
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background: black;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#myBtn:hover {
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+#thongbao .register {
+    width: 432px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    animation: downAnimation ease 0.3s;
+}
+
+#thongbao .register .border {
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #dadde1;
+    margin: 12px 0;
+    text-align: center;
+}
+
+#thongbao .register-form .input-item-haft {
+    width: 48%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+    float: left;
+}
+
+#thongbao .input-item-haft.left {
+    margin-right: 8px;
+}
+
+#thongbao .input-item-haft.right {
+    margin-left: 8px;
+}
+
+#thongbao .register-form .input-items {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+#thongbao .register-form .register-div {
+    margin-top: 24px;
+}
+
+#thongbao .register .title-register {
+    position: relative;
+}
+
+#thongbao .title-register .close-register {
+    padding: 2px 2px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    font-size: 30px;
+    color: #111111;
+    cursor: pointer;
+}
+
+/*#thongbao.js-register.open {*/
+/*    display: flex;*/
+/*}*/
+
+#thongbao
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#thongbao .register-div {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 6px;
+    text-align: center;
+}
+
+#thongbao .input-register{
+    font-size: 33px;
+    text-align: center;
+}
+
+#thongbao .register-div .btn-register {
+    margin: 0 16px;
+    flex: 1;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 26px;
+    background-color: #42b72a;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+#thongbao .register-div #yes:hover{
+    background-color: #28a745;
+}
+#thongbao .register-div #no{
+    background-color: #b30000;
+}
+
+#thongbao .register-div #no:hover{
+    background-color: #e60000;
+}
+
+#content {
+
+}
+
+.newcontainer{
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.new2{
+    width: 25%;
+    background: #5a6b6a;
+    display: flex;
+    flex-direction: column;   
+}
+.title_new {
+    background: whitesmoke;
+    position: relative;
+    height: 10%;
+    top: -19px;
+  }
+  
+  .title_new h2 {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+  }
+.new1{
+    width: 60%;
+    margin-left: 5% ;
+    margin-right: 5%;
+}
+.image_new{
+    justify-content: center;
+    display: flex;
+    width: 90%;
+}
+.image_new img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+.txt_new{
+    color: black;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 30%;
+    background:whitesmoke;
+    
+    margin-top: 20px;
+    margin-bottom: 500px;
+}
+.txt_new h3{
+    font-size: 33px;
+}
+.txt_new p{
+    font-size: 33px;
+}
+.btn_log {    
+    width: 100%;
+    height: 70px;    
+    position: sticky;
+    bottom: 0;
+}
+.btn_log button{
+    width: 100%;
+    height: 100%;
+    background: red;
+    color: whitesmoke;
+    font-weight: bold;
+}

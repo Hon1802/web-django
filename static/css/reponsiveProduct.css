@@ -1,0 +1,35 @@
+@media (min-width: 740px) and (max-width: 1024px) {
+    #product-page #content-product .infor-product .product-details{
+        width: 50%;
+        float: left;
+    }
+    #product-page #content-product .sale-policy{
+        width: 50%;
+        float: right;
+    }
+}
+@media (max-width: 740px) {
+        #product-page {
+          margin: auto;
+        }
+
+    #product-page #container {
+        margin: auto;
+    }
+    #product-page #content-product{
+        margin: 0;
+    }
+    #product-page #content-product .infor-product{
+        margin: 20px 0 20px 0;
+    }
+    #product-page #content-product .infor-product .product-sale{
+        display: none;
+    }
+    #product-page #content-product .sale-policy{
+        display: none;
+    }
+    #product-page #content-product #container{
+        margin: 20px 0 20px 0;
+    }
+
+}

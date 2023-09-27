@@ -1,0 +1,4 @@
+Django==4.1.7
+nltk==3.8.1
+scikit_learn==1.2.2
+mysqlclient==2.1.1

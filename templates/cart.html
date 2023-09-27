@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+{% load static %}
+
+<head>
+    {% block content %}
+    {% include 'header.html' %}
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Shop</title>
+    <link rel="icon" href="../image/logo-re.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css"
+          integrity="sha512-Rcr1oG0XvqZI1yv1HIg9LgZVDEhf2AHjv+9AuD1JXWGLzlkoKDVvE925qySLcEywpMAYA/rkg296MkvqBF07Yw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href=   "{% static 'css/cart.css'     %}">
+    <link href=         "{% static "/css/responsiveIndex.css"  %}"         rel="stylesheet">
+    <link href=   "{% static "/fonts/themify-icons/themify-icons.css"  %}" rel="stylesheet">
+    <link href=   "{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.css"    %}"                 rel="stylesheet">
+    <link href="{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.min.css"    %}"   rel="stylesheet">
+    <link rel="stylesheet" href="{% static "/css/cartResponsive.css"   %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</head>
+<body>
+<div id="cart-main">
+
+    <div class="cart" class="bg-gray">
+        <div class="container padding padding-top-60">
+            <div class="address-menu">
+                <div class="sub-container">
+                    <div class="home-btn sub-container-content">
+                        <a role="button" class="btn-circle white-bg" href="../index.html">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </div>
+                    <div class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="current-btn sub-container-content">
+                        <span class="info-content black-text rounded-border">Giỏ hàng</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-info">
+                <div class="left-content" style="width: 90%; margin: 0 5%;">
+                    <div id="your-cart">
+                        <div class="container">
+                            <div class="top-content">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-container">
+                            <div class="cart-header">
+                                <div class="left-provider-content">
+                                    <div class="provider-container">
+                                       
+                                    </div>
+                                </div>
+                                <div class="right-provider-content">
+                                        
+                                </div>
+                            </div>
+
+
+                             {% load l10n %}
+
+
+  <h1>Cart</h1>
+ 
+  {% if items %}
+    <table>
+        {% for item in items %}
+        <div class="cart-item-info">
+         
+                                <div class="container">
+
+                                    <div class="item">
+                                        <div class="left-cart-item">
+                                            <div class="item-checkbox item-padding">
+                                                
+                                                <a href={% url 'remove_from_cart' pk=item.order_item.pk %} >
+                                                    <button type="button">
+                                                        <i class="material-icons">delete</i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <div class="item-thumbnail item-padding">
+                                                <img class="item-logo-thumbnail" src="{{ item.product.images.first.image.url }}">
+                                            </div>
+                                            <div class="item-info-container item-padding">
+                                                <span class="item-info-name smaller-text">{{item.product.name}}</span>
+                                                <span class=" item-info-sku smaller-text light-gray-text">Mã Laptop:{{item.product.id}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="right-cart-item">
+                                            <div class="btn-add-subtract">
+                                                <button class="btn-padding btn-subtract" >
+                                                <button class="btn-padding btn-add"  > <a href={% url "subtract_quantity_cart" pk=item.order_item.pk %}>
+
+                                                
+                                                    <i class="icon-btn fas fa-chevron-down"></i> </>
+                                                 
+                                                </button>
+                                                <div class="btn-padding number">{{item.quantity}}</div>
+                                                <button class="btn-padding btn-add"  > <a href={% url "add_quantity_cart" pk=item.order_item.pk %}>
+                                                    <i class="icon-btn fas fa-chevron-up"></i> </>
+                                                </button>
+                                            </div>
+                                            <div class="price">
+                                                <span class="bolder gray-text price-text">{{item.total_price|floatformat:0}}<span>đ</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+       
+        {% endfor %}
+      
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}                              
+                </div>
+                <div class="right-content">
+                    <div class="container">
+                        <div class="coupon">
+                            
+                        </div>
+                        <div class="cash">
+                            <div class="container">
+                                <div class="cash-title">
+                                    <span class="large-text bolder">Payment</span>
+                                </div>
+                                <!-- <div class="provisional-price" class="padding-10">
+                                    <span class="left gray-text">Tạm tính</span>
+                                    <span class="right provisional-cash bolder">4300000<span>đ</span></span>
+                                </div> -->
+                                <div class="final-price" class="padding-10 padding-bottom-20">
+                                    <span class="left gray-text">Into money</span>
+                                    <span class="right final-cash large-text red-text bolder">{{total_amount}}<span>đ</span></span>
+                                </div>
+                                <!-- <div class="VAT" class="padding-10">
+                                    <span class="gray-text">(Đã bao gồm VAT)</span>
+                                </div> -->
+                                <form method="get" action="{% url 'checkout'%}">
+                                 {% csrf_token %}
+                                    <div class="buy">
+                                        <button type="submit" class="buy-btn">Purchase</button> 
+                                      
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+<div class="js-login" id="login-main" style="z-index: 10">
+    <div class="login js-login-container">
+        <div class="title-login">
+            <a class="close-login" role="button"></a>
+            <h1 class="title-login-main">Đăng nhập</h1>
+            <p class="slogan-login">Hãy tham gia cùng chúng tôi</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="login-form">
+            <div class="input-login">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu" required type="password">
+            </div>
+            <button class="btn-login">Đăng nhập</button>
+        </form>
+        <div class="forgot-pass-main">
+            <a class="forgot-pass js-forgot-pass" role="button">Quên mật khẩu</a>
+        </div>
+        <div class="border"></div>
+        <div class="new-account">
+            <a class="btn-new-account js-new-account" role="button">Tạo tài khoản mới</a>
+        </div>
+    </div>
+</div>
+<div class="js-forgot" id="forgot-main" style="z-index: 10">
+    <div class="forgot js-forgot-container">
+        <div class="title-forgot">
+            <a class="close-forgot" role="button"></a>
+            <h1 class="title-forgot-main">Quên mật khẩu</h1>
+            <p class="slogan-forgot">Chúng tôi sẽ hỗ trợ tận tình</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="forgot-form">
+            <div class="input-forgot">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu gần nhất" required type="password">
+            </div>
+            <button class="btn-forgot">Tìm tài khoản</button>
+        </form>
+        <div class="border"></div>
+        <div class="come-back">
+            <a class="btn-come-back js-come-back" role="button">Quay trở lại đăng nhập</a>
+        </div>
+    </div>
+</div>
+<div class="js-register" id="register-main" style="z-index: 10">
+    <div class="register js-register-container">
+        <div class="title-register">
+            <a class="close-register js-close-icon" role="button"><i class="fas fa-times"></i></a>
+            <h1 class="title-register-main" style="margin: 0; line-height: 1.4;">Đăng kí</h1>
+            <p class="slogan-register">Nhanh chóng và dễ dàng</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="register-form">
+            <div class="input-register">
+                <input class="input-items" placeholder="Họ và tên" required type="text">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu mới" required type="password">
+                <input class="input-items" placeholder="Địa chỉ nhận hàng" required type="password">
+                <input class="input-items" placeholder="Email liên hệ" required type="password">
+            </div>
+            <div class="register-div">
+                <a class="btn-register" role="button">Đăng kí</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Back to top-->
+<button id="myBtn">&#8593;</button>
+</body>
+<script src="../js/register.js"></script>
+<script crossorigin="anonymous" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        referrerpolicy="no-referrer"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{% static "/js/nav-responsive.js" %}"  ></script>
+<script src="{% static "/js/BackToTop.js" %}"           ></script>
+<script src="{% static "/js/Scroll-Indicator.js" %}"></script>
+
+
+
+<script>
+
+
+
+
+</script>
+{% endblock %}
+</html>

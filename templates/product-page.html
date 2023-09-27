@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Product</title>
+    <title>Metaverse Laptop</title>
+    <link rel="icon" href= {% static "/image/logo-re.png" %}    >
+    <link href={% static "/css/style-product.css"  %}                 rel="stylesheet">
+    <link href={% static   "/css/responsiveIndex.css" %}                rel="stylesheet">
+    <link href={% static  "/fonts/themify-icons/themify-icons.css" %}                 rel="stylesheet">
+    <link href={% static     "/fonts/font-awesome-4.7.0/css/font-awesome.css" %}             rel="stylesheet">
+    <link href={% static "/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}                  rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+
+    <link rel="stylesheet"  href={% static   "../css/reponsiveProduct.css" %}  >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <style>
+        .custom-link {
+          position: relative;
+          display: inline-block;
+          padding-right: 20px;
+          text-decoration: none;
+        }
+    
+        .checkmark {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
+          background-color: transparent;
+          border: 2px solid #000;
+          visibility: hidden;
+        }
+    
+        .custom-link.clicked .checkmark {
+          visibility: visible;
+        }
+    
+        .custom-link.clicked .checkmark::before {
+          content: "\2713"; /* Mã Unicode của dấu tích */
+          display: block;
+          text-align: center;
+          margin: -6px;
+        }
+        span.checkmark{
+            position: absolute;
+            top: -10px;
+            left: 0px;
+            color: red;
+            text-align: center;
+        }
+      </style>
+
+</head>
+
+<body>
+
+<div id="header">
+    <a href="{% url 'home' %}">
+        <div class="header_logo">
+            <!--                <img src="../image/img_1.png" alt="" class="logo">-->
+        </div>
+    </a>
+    <form action="" class="header_search">
+        <div class="search">
+            <input class="header_input-search" placeholder="Nhập từ khóa cần tìm kiếm" required type="text">
+            <button class="header_btn-search" role="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <div class="header_list" id="header-list-id">
+        <ul class="header_list-item">
+            <li class="header_sub-list">
+                <a class="font-14 hover-header" href="product-page.html">
+                    <i class="hover-header1 fas fa-laptop"></i>Sản phẩm
+                </a>
+            </li>
+            <li class="header_sub-list">
+                <a class="font-14 hover-header" href="tutorial-page.html">
+                    <i class="hover-header1 fas fa-clipboard-check"></i>Hướng dẫn
+                </a>
+            </li>
+            <li class="header_sub-list">
+                <a class="font-14 hover-header" href="about-us.html">
+                    <i class="hover-header1 fas fa-users"></i>Thông tin
+                </a>
+            </li>
+            <li id="li-cart" class="header_sub-list">
+                <a class="font-14 hover-header" href="/cart">
+                    <i class="hover-header1 fas fa-shopping-cart"></i>Giỏ hàng
+                </a>
+                <div id="icon-cart" class="icon-cart"></div>
+            </li>
+            <li class="header_sub-list">
+                <a class="font-14 hover-header js-btn-login" role="button">
+                    <i class="hover-header1 fas fa-user"></i>Đăng nhập
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu-mobile-class" id="mobile-menu">
+        <i class="menu-mobile-btn ti-menu"></i>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+
+</div>
+
+<div id="cart-hover" class="hover-cart">
+    <div class="cover-cart-item">
+
+    </div>
+    <div class="total-cart">
+        <div class="total-price-infor">
+            <div class="total-product"></div>
+<!--            <div class="total-product">Tổng tiền (2) sản phẩm</div>-->
+            <div class="total-price"></div>
+        </div>
+        <div role="button" class="btn-view-cart"><a href="/cart" class="btn-tt">Xem giỏ hàng</a></div>
+    </div>
+</div>
+<div id="view-image-product">
+    <div id="close-view-image-product"><i class="fas fa-times"></i></div>
+    <div class="big-image-view-product" style="background-image: url('../image/dell/dell1/dell1.png')"></div>
+    <div class="items-image-view-product">
+        <div class="item-image-view-product" style="background-image: url('../image/dell/dell1/dell1.png')"></div>
+        <div class="item-image-view-product" style="background-image: url('../image/dell/dell1/dell2.png')"></div>
+        <div class="item-image-view-product" style="background-image: url('../image/dell/dell1/dell3.png')"></div>
+        <div class="item-image-view-product" style="background-image: url('../image/dell/dell1/dell4.png')"></div>
+        <div class="item-image-view-product" style="background-image: url('../image/dell/dell1/dell5.png')"></div>
+    </div>
+</div>
+<div id="product-page">
+    <div id="content-product" style="display: flex; flex-direction: column; margin: 0 10%;">
+        <div class="infor-product">
+        {% block content %}
+            <script>
+                document.getElementById("checkclickhere").addEventListener("click", function(event) {
+                event.preventDefault();
+                var link = this;
+                link.classList.toggle("clicked");
+                });
+                {% if messages %}
+                    {% for message in messages %}
+                        Toastify({
+                            text: "{{ message }}",
+                            duration: 3000,
+                            gravity: "center",
+                            position: "center",
+                            offset: {
+                                x: 0,
+                                y: 50
+                            },
+                            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                            stopOnFocus: true,
+                        }).showToast();
+                    {% endfor %}
+                {% endif %}
+            </script>
+
+
+            <div class="product-details">
+                <div id="product-image" class="product-image" style="background-image:  url( {{ laptop.images.first.image.url }} ) "></div>
+                <div class="details-image">
+                
+                 {% for image in laptop.images.all|slice:"1:" %}
+                   <div class="details-image-item" style="background-image: url(  {{  image.image.url }}   )"></div>
+                
+                {% endfor %}
+                  
+                </div>
+            </div>
+           
+       
+            
+            <div class="product-sale">
+                <h1 class="title-pro"> {{laptop.name}} </h1>
+                <div class="trademark">Thương hiệu: {{laptop.brand}} </div>
+                <div class="price-product"> {{get_price}}  VND</div>
+                <div class="border-pro"></div>
+                <div class ="newclass" style="display: flex;">
+                    <div class="BOXKHUYENMAILIENQUAN" style="width: 60%;">
+                        <div class="css-mz7xyg">Thông tin:</div>
+                        <ul>
+                            <li>Processor:  {{laptop.processor}} </li>
+                            <li>VGA:  {{laptop.VGA}} </li>
+                            <li>Hard disk:  {{ssd_detail.capacity}} GB {{laptop.ssd.type}} </li>
+                            <li>Ram: {{ram_detail.capacity}} GB  </li>
+                            
+                            <li> Bảo hàng  {{laptop.warranty}} tháng</li>
+                        
+                        </ul>
+                    </div>
+                    <div class="option">
+                        <div style="display: flex; justify-content: space-around;">
+                            
+                        </div>        
+                        <a href="{% url "laptop_detail" pk=laptop.pk  %}?ram=1&ssd=2" class="custom-link" onclick="toggleCheckmark(this)" style="display: inline-block; text-align: center; border: 1px solid black; padding: 10px;text-decoration: none;"><strong> {{laptop.processor}} <br>8GB - 256GB<br>{{laptop.VGA}}</strong> <br> <span ></span><span class="checkmark"></span></a>
+                        <a href="{% url "laptop_detail" pk=laptop.pk  %}?ram=2&ssd=3" class="custom-link" onclick="toggleCheckmark(this)" style="display: inline-block; text-align: center; border: 1px solid black; padding: 10px;text-decoration: none;"><strong>{{laptop.processor}} <br>16GB - 512GB<br>{{laptop.VGA}}</strong> <br> <span ></span><span class="checkmark"></span></a>
+                       
+
+
+                        <script>
+                            function toggleCheckmark(element) {
+                            element.classList.toggle("clicked");
+                            }
+                        </script>
+                        </div>
+                </div>
+               
+                <div class="border-pro"></div>
+                <div class="btn-pro">
+                    <div class="mua-ngay"><a href="" class="btn-mua ripple">MUA NGAY</a> </div>
+                    <div class="them-vao-gio"><a href="{% url 'add_to_cart' laptop.id 1 get_price ram ssd %}"  role="button" id="them-vao-gio"  class="btn-mua ripple">THÊM VÀO GIỎ HÀNG</a>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="sale-policy">
+            <div style="display:flex;margin-bottom: 8px">
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/free-ship.png')"></div>
+<!--                <img src="../image/icon-product/free-ship.png" style="">-->
+                <span style="margin: auto 0 auto 0">Sản phẩm được miễn phí giao hàng</span>
+            </div>
+            <div class="border-pro"></div>
+            <div class="policy" type="subtitle"><strong>Chính sách bán hàng</div>
+            <div style="display:flex;margin-bottom: 8px">
+<!--                <img src="../image/icon-product/ship.png" style="margin-right: 3px;line-height:normal">-->
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/ship.png')"></div>
+
+                <span style="margin: auto 0 auto 0"> <em>Miễn phí giao hàng cho đơn hàng từ 800K</span>
+            </div>
+            <div style="display:flex;margin-bottom: 8px">
+<!--                <img src="../image/icon-product/camket.png" style="margin-right: 3px;line-height:normal">-->
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/camket.png')"></div>
+
+                <span style="margin: auto 0 auto 0">Cam kết hàng chính hãng 100%</span>
+            </div>
+            <div style="display:flex;margin-bottom: 8px">
+<!--                <img src="../image/icon-product/doitra.png" style="margin-right: 3px;line-height:normal">-->
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/doitra.png')"></div>
+
+                <span style="margin: auto 0 auto 0">Đổi trả trong vòng 10 ngày</span>
+            </div>
+            </em>
+            <div class="policy" type="subtitle"> <strong> Dịch vụ khác</div>
+                <em>
+            <div style="display:flex;margin-bottom: 8px">
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/suachua.png')"></div>
+
+                <span style="margin: auto 0 auto 0">Sửa chữa đồng giá 150.000đ.</span>
+            </div>
+            <div style="display:flex;margin-bottom: 8px">
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/baotri.png')"></div>
+
+                <span style="margin: auto 0 auto 0">Vệ sinh máy tính, laptop.</span>
+            </div>
+            <div style="display:flex;margin-bottom: 8px">
+                <div class="img-sale-policy" style="background-image: url('../image/icon-product/camket.png')"></div>
+
+                <span style="margin: auto 0 auto 0">Bảo hành tại nhà.</span>
+            </div>
+            </em>   
+        </div>
+    </div>
+    <div id="container">
+        <div class="body-content">
+            <div>
+                <div class="tabs">
+                    <a class="tab active" href="#">Thông số kỹ thuật</a>
+                </div>
+                <div class="tab-contents">
+                    <div class="tab-content active" data-tabidx="1">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table-specs">
+                                    <tbody>
+                                    <tr>
+                                        <td> CPU</td>
+                                        <td> {{laptop.processor}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Memory</td>
+                                        <td> {{laptop.ram}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Hard Disk</td>
+                                        <td> {{laptop.hard_disk}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> VGA</td>
+                                        <td> {{laptop.VGA}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Display</td>
+                                        <td> {{laptop.display_size }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Other</td>
+                                        <td> HP Audio Boost B&amp;O Play, Webcam 720p, Backlit Keyboard,
+                                            Multi-Format SD Media Card Reader, Headphone/ Microphone Combo, HDMI
+                                            2.1, RJ-45, SuperSpeed USB Type A 5Gbps Signaling Rate, SuperSpeed USB
+                                            Type A 5Gbps Signaling Eate (HP Sleep and Charge), SuperSpeed USB Type-C
+                                            5Gbps Signaling Rate (DisplayPort™ 1.4, HP Sleep and Charge)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Wireless</td>
+                                        <td> Intel Wi Fi 6 (802.11ax) + Bluetooth 5.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Battery</td>
+                                        <td> 4 Cells 70 Whrs Battery</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Weight</td>
+                                        <td> 2,40 Kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td> SoftWare</td>
+                                        <td> Windows 10 Home SL 64bit</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Xuất xứ</td>
+                                        <td> Brand New 100%, Hàng Phân Phối Chính Hãng Tại Việt Nam, Bảo Hành Chính
+                                            Hãng
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Màu sắc</td>
+                                        <td> Mica Silver</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Bảo hành</td>
+                                        <td> 12 tháng</td>
+                                    </tr>
+                                    <tr>
+                                        <td> VAT</td>
+                                        <td> Đã bao gồm VAT</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bestseller">
+        <div class="bestseller-main">
+            <div class="title-bestseller">
+                <div class="border-bestseller"></div>
+                <div class="title-main-bestseller">Sản phẩm bạn có thể</div>
+                <a class="view-all-bestseller" href="">Xem tất cả <i class="fas fa-angle-right"></i></a>
+            </div>           
+            <div class="product-bestseller">
+             {% for laptop in similar_laptops %}
+            
+             <a class="click-action" href={%  url "laptop_detail" pk=laptop.id %}>
+                    <div class="product-bestseller-items">
+                        <div class="img-product-bestseller"
+                               style="background-image: url( {{laptop.images.first.image.url}} )"          ></div>
+                        <div class="product-bestseller-name">
+                            <div class="product-name"> {{laptop.name}} </div>
+                            <div class="product-status">Còn {{laptop.quantity}} sản phẩm</div>
+                        </div>
+                        <div class="product-price">{{laptop.price}} ₫</div>
+                    </div>
+                </a>
+                  
+            {% endfor %}
+               
+    
+               
+            </div>
+        </div>
+    </div>
+     {% endblock %}
+
+    <div id="footer">
+        <div class="footer-main">
+            <div class="footer-element">
+                <a class="footer-icon" href="https://github.com/sktBesttri" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a class="footer-icon" href="" target="_blank"><i class="fas fa-globe-asia"></i></a>
+                <a class="footer-icon" href="" target="_blank"><i class="fas fa-users"></i></a>
+                <p class="copyright">Powered by BestTris © Student of the HCMC University of Technology and Education</p>
+                <p class="copyright">Copyright © 2023 Best Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<div class="js-login" id="login-main" style="z-index: 10">
+    <div class="login js-login-container">
+        <div class="title-login">
+            <a class="close-login" role="button"></a>
+            <h1 class="title-login-main">Đăng nhập</h1>
+            <p class="slogan-login">Hãy tham gia cùng chúng tôi</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="login-form">
+            <div class="input-login">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu" required type="password">
+            </div>
+            <button class="btn-login">Đăng nhập</button>
+        </form>
+        <div class="forgot-pass-main">
+            <a class="forgot-pass js-forgot-pass" role="button">Quên mật khẩu</a>
+        </div>
+        <div class="border"></div>
+        <div class="new-account">
+            <a class="btn-new-account js-new-account" role="button">Tạo tài khoản mới</a>
+        </div>
+    </div>
+</div>
+<div class="js-forgot" id="forgot-main" style="z-index: 10">
+    <div class="forgot js-forgot-container">
+        <div class="title-forgot">
+            <a class="close-forgot" role="button"></a>
+            <h1 class="title-forgot-main">Quên mật khẩu</h1>
+            <p class="slogan-forgot">Chúng tôi sẽ hỗ trợ tận tình</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="forgot-form">
+            <div class="input-forgot">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu gần nhất" required type="password">
+            </div>
+            <button class="btn-forgot">Tìm tài khoản</button>
+        </form>
+        <div class="border"></div>
+        <div class="come-back">
+            <a class="btn-come-back js-come-back" role="button">Quay trở lại đăng nhập</a>
+        </div>
+    </div>
+</div>
+<div class="js-register" id="register-main" style="z-index: 10">
+    <div class="register js-register-container">
+        <div class="title-register">
+            <a class="close-register js-close-icon" role="button"><i class="fas fa-times"></i></a>
+            <h1 class="title-register-main" style="margin: 0; line-height: 1.4;">Đăng kí</h1>
+            <p class="slogan-register">Nhanh chóng và dễ dàng</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="register-form">
+            <div class="input-register">
+                <input class="input-items" placeholder="Họ và tên" required type="text">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu mới" required type="password">
+                <input class="input-items" placeholder="Địa chỉ nhận hàng" required type="password">
+                <input class="input-items" placeholder="Email liên hệ" required type="password">
+            </div>
+            <div class="register-div">
+                <a class="btn-register" role="button">Đăng kí</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Back to top-->
+<button id="myBtn">&#8593;</button>
+</body>
+<script src={%static "/js/register.js" %}   ></script>
+<script src={%static  "/js/register.js" %}  ></script>
+<script crossorigin="anonymous" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        referrerpolicy="no-referrer"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!--<script src="../js/slider.js"></script>-->
+<script src={% static "/js/CartAtHover.js" %} ></script>
+<script src={% static "/js/ripple-button.js" %} ></script>
+<script src={% static "/js/product-bestseller.js"%} ></script>
+<script src={% static "/js/nav-responsive.js" %}></script>
+<script src={% static "/js/BackToTop.js"  %} ></script>
+<script src={% static "/js/Scroll-Indicator.js" %} ></script>
+<script src={% static "/js/visibleCart.js" %} ></script>
+<script src={% static  "/js/clickAddCart.js"%}></script>
+<script src={% static "/js/hover-product.js" %} ></script>
+<script src={% static "/js/view-image-product.js" %} ></script>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+

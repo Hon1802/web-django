@@ -1,0 +1,606 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: rgba(204, 204, 202, 0.3);
+    /*overflow-y: scroll;*/
+    scroll-behavior: smooth;
+    font-family: roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+/*Start CSS header top*/
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 43px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#header .header_logo {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../image/logo.png");
+}
+
+#header .header_logo .logo {
+    /*width: 250px;*/
+    /*height: 36px;*/
+    max-width: 100%;
+    height: auto;
+}
+
+#header .header_search {
+    width: 100%;
+    flex: 1;
+    padding: 0 16px;
+}
+
+#header .header_search .header_input-search {
+    padding: 6px 12px;
+    height: 37px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    background-color: #f5f5f5;
+}
+
+#header .header_search .header_btn-search {
+    font-size: 18px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #1435c3;
+    cursor:  pointer;
+    border: none;
+}
+
+#header .header_search .search {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header .menu-mobile-class {
+    display: none;
+}
+
+#header .header_list {
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+#header .header_list .header_list-item {
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+#header .header_list .header_sub-list {
+    width: 90px;
+    height: 75px;
+    padding: 12px 3px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    margin: 0 4px;
+}
+
+#header .header_list .header_sub-list:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    background-color: rgba(20, 53, 195, 1);
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    /*transition: transform 0.45s ease-in-out;*/
+}
+
+/*#header .header_list .header_sub-list:hover {*/
+/*    cursor: pointer;*/
+/*    !*color: #161616;*!*/
+/*    color: #ffffff;*/
+/*}*/
+#header .header_list .header_sub-list:hover::before {
+    color: #ffffff;
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+#header .header_list .header_sub-list:hover i {
+    color: #ffffff;
+}
+#header .header_list .header_sub-list:hover a {
+    color: #ffffff;
+}
+
+#header .header_list .header_sub-list:hover .hover-header {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#header .header_list .header_sub-list .hover-header1 {
+    font-size: 32px;
+}
+
+
+#header .header_list .header_sub-list i {
+    display: block;
+    text-align: center;
+    color: #cccccc;
+    padding-bottom: 5px;
+}
+
+#header .header_list .header_sub-list a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+/*End CSS header top*/
+
+/*Start content*/
+#main-tutorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+#container {
+    width: 60%;
+    height: auto;
+    margin-top: 100px;
+    /*padding: 12px 50px 12px 50px;*/
+    display: flex;
+    align-content: center;
+    /*align-items: center;*/
+    justify-content: center;
+    flex-direction: column;
+    /*background-color: white;*/
+}
+
+#main-tutorial #container .step {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+#main-tutorial .img-tutorial {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding-bottom: 45%;
+    margin-bottom: 16px;
+}
+
+#main-tutorial .content-tutorial {
+    margin-bottom: 12px;
+}
+
+#main-tutorial #container .title-tutorial {
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 42px;
+}
+/*End content*/
+/*Start CSS footer*/
+#footer {
+    /*width: 100%;*/
+    height: 185px;
+    background-color: #b7b7b7;
+}
+
+#footer .footer-main {
+    padding: 24px 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .footer-element p {
+    margin-top: 16px;
+    color: #555050;
+}
+
+#footer .footer-icon {
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    font-size: 23px;
+    color: #555050;
+    border-radius: 50%;
+    border: 1px solid #555050;
+    margin: 8px;
+    padding: 10px 8px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/*End CSS footer*/
+/*Start CSS login forgot*/
+#login-main.js-login.open {
+    display: flex;
+}
+
+#forgot-main.js-forgot.open {
+    display: flex;
+}
+
+#register-main,
+#forgot-main,
+#login-main {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#forgot-main .forgot,
+#login-main .login {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    padding: 10px 16px 24px 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /*justify-content: center;*/
+    align-items: center;
+    animation: downAnimation ease 0.3s;
+}
+
+@keyframes downAnimation {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#login-main .login {
+    height: 425px;
+}
+
+#forgot-main .forgot {
+    height: 390px;
+}
+
+#login-main .title-login,
+#forgot-main .title-forgot {
+    width: 100%;
+}
+
+#forgot-main .forgot input,
+#login-main .login input {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+#forgot-main .forgot .btn-forgot,
+#login-main .login .btn-login {
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    background-color: #1877f2;
+    border-radius: 6px;
+    padding: 0 16px;
+    line-height: 48px;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+#forgot-main .forgot-pass,
+#login-main .forgot-pass {
+    text-align: center;
+    display: block;
+    padding: 0px 30px;
+    cursor: pointer;
+}
+
+#forgot-main .forgot-pass-main,
+#login-main .forgot-pass-main {
+    margin-top: 16px;
+}
+
+#forgot-main .forgot-pass-main .forgot-pass,
+#login-main .forgot-pass-main .forgot-pass {
+    text-decoration: none;
+    color: #1877f2;
+}
+
+#forgot-main .border,
+#login-main .border {
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #dadde1;
+    margin: 20px 16px;
+    text-align: center;
+}
+
+#register-main .register-div,
+#forgot-main .come-back,
+#login-main .new-account {
+    width: 100%;
+    height: 54px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+#register-main .register-div .btn-register,
+#forgot-main .come-back .btn-come-back,
+#login-main .new-account .btn-new-account {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 26px;
+    background-color: #42b72a;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*End CSS login forgot*/
+/*Start CSS register*/
+#register-main .register {
+    width: 432px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 16px 24px 16px;
+    animation: downAnimation ease 0.3s;
+}
+
+#register-main .register .border {
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #dadde1;
+    margin: 12px 0;
+    text-align: center;
+}
+
+#register-main .register-form .input-item-haft {
+    width: 48%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+    float: left;
+}
+
+#register-main .input-item-haft.left {
+    margin-right: 8px;
+}
+
+#register-main .input-item-haft.right {
+    margin-left: 8px;
+}
+
+#register-main .register-form .input-items {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+#register-main .register-form .register-div {
+    margin-top: 24px;
+}
+
+#register-main .register .title-register {
+    position: relative;
+}
+
+#register-main .title-register .close-register {
+    padding: 2px 2px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    font-size: 30px;
+    color: #111111;
+    cursor: pointer;
+}
+
+#register-main.js-register.open {
+    display: flex;
+}
+
+/*End CSS register*/
+
+/*Scroll Indicator*/
+.progress-container{
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+    position: absolute;
+    bottom: -8px;
+}
+.progress-bar{
+    height: 8px;
+    background: linear-gradient(to right, #FC5C7D, #6A82FB);
+    width: 0%;
+    transition: width 0.2s ease-out;
+}
+
+/*Back to top*/
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background: black;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+#myBtn:hover {
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.hover-cart {
+    z-index: 1000;
+    position: fixed;
+    width: 385px;
+    height: auto;
+    background-color: white;
+    right: 125px;
+    word-wrap: break-word;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    top: 79px;
+    display: none;
+    /* justify-content: center; */
+    /* bottom: 0; */
+}
+
+.hover-cart .cover-cart-item {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-wrap: break-word;
+    height: 250px;
+}
+
+.hover-cart .cart-item {
+    display: flex;
+    margin-top: 4px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.hover-cart .img-cart-item {
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hover-cart .details-cart-item {
+    height: 80px;
+    width: 256px;
+    margin-left: 12px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.hover-cart .infor-cart-item {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 4px 0 4px 0;
+}
+
+.hover-cart .num-cart-item {
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.3;
+    margin: 4px 0 4px 0;
+}
+
+.hover-cart .price-cart-item {
+    font-weight: 700;
+    margin: 4px 0 4px 0;
+}
+
+.hover-cart .total-cart {
+    height: auto;
+    /*background-color: #1435c3;*/
+    width: 100%;
+    padding: 8px;
+}
+
+.hover-cart .total-price-infor {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.hover-cart .total-price {
+    font-weight: 800;
+    color: crimson;
+}
+.hover-cart .btn-view-cart {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.hover-cart .btn-view-cart a {
+    background-color: #1435c3;
+    padding: 10px 127px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.icon-cart {
+    width: 25px;
+    height: 25px;
+    background-color:  #ff4d4d;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    display: none;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 2px;
+}

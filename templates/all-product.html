@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+    {% block content %}
+    {% include 'header.html' %}
+     {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Metaverse Laptop</title>
+    <link href=      "{% static  '/static/image/logo-re.png' %}"     rel="icon">
+    <link href=       "{% static    "/css/style.css" %}"    rel="stylesheet">
+    <link href=  "{% static  "/fonts/themify-icons/themify-icons.css"%}"    rel="stylesheet">
+    <link href="{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.css"  %}"  rel="stylesheet">
+    <link href="{% static  "/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}"   rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="{% static  "/css/responsiveIndex.css"  %}"  rel="stylesheet">
+    <style>
+    .filter-items .filter-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.filter-items .filter-item.selected a {
+  color: red; /* Change the color for the selected filter item */
+}
+.filter-item-another a {
+    background: white;
+  text-decoration: none;
+  color: black;
+}
+
+.filter-item-another a.selected {
+  color: red; /* Change the color for the selected sorting option */
+  font-weight: bold; /* Apply bold font weight to the selected sorting option */
+}
+
+.input-filter-product {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.btn-search-filter {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-search-filter:hover {
+  background-color: #45a049;
+}
+.filter-items .filter-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.filter-items .filter-item a.selected,
+.filter-items .filter-item a:hover {
+  color: red; /* Change the color for the selected and hovered filter items */
+}
+
+.filter-items .filter-item.selected .tick {
+  display: block; /* Show the tick icon for the selected filter item */
+}
+
+.filter-items .tick {
+  display: none; /* Hide the tick icon by default */
+}
+
+    </style>
+</head>
+<body>
+<div id="main">
+
+
+    <div class="hover-cart" id="cart-hover">
+        <div class="cover-cart-item">
+            <div class="cart-item">
+                <div class="img-cart-item" style="background-image: url(../static/image/image99.png)">
+
+                </div>
+                <div class="details-cart-item">
+                    <div class="infor-cart-item">Màn hình LCD VIEWSONIC VP2458 (1920 x 1080/IPS/60Hz/5 ms)</div>
+                    <div class="num-cart-item">Quantity: 2</div>
+                    <div class="price-cart-item">5.620.000đ</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="img-cart-item" style="background-image: url(../static/image/image99.png)">
+
+                </div>
+                <div class="details-cart-item">
+                    <div class="infor-cart-item">Màn hình LCD VIEWSONIC VP2458 (1920 x 1080/IPS/60Hz/5 ms)</div>
+                    <div class="num-cart-item">Quantity: 2</div>
+                    <div class="price-cart-item">5.620.000đ</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="img-cart-item" style="background-image: url(../static/image/image99.png)">
+
+                </div>
+                <div class="details-cart-item">
+                    <div class="infor-cart-item">Màn hình LCD VIEWSONIC VP2458 (1920 x 1080/IPS/60Hz/5 ms)</div>
+                    <div class="num-cart-item">Quantity: 2</div>
+                    <div class="price-cart-item">5.620.000đ</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="img-cart-item" style="background-image: url(../static/image/image99.png)">
+
+                </div>
+                <div class="details-cart-item">
+                    <div class="infor-cart-item">Màn hình LCD VIEWSONIC VP2458 (1920 x 1080/IPS/60Hz/5 ms)</div>
+                    <div class="num-cart-item">Quantity: 2</div>
+                    <div class="price-cart-item">5.620.000đ</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="img-cart-item" style="background-image: url(../static/image/image99.png)">
+
+                </div>
+                <div class="details-cart-item">
+                    <div class="infor-cart-item">Màn hình LCD VIEWSONIC VP2458 (1920 x 1080/IPS/60Hz/5 ms)</div>
+                    <div class="num-cart-item">Quantity: 2</div>
+                    <div class="price-cart-item">5.620.000đ</div>
+                </div>
+            </div>
+        </div>
+        <div class="total-cart">
+            <div class="total-price-infor">
+                <div class="total-product">Tổng tiền (2) product</div>
+                <div class="total-price">11.240.000đ</div>
+            </div>
+            <div class="btn-view-cart" role="button"><a class="btn-tt" href="cart.html">View cart</a></div>
+        </div>
+    </div>
+    <div id="content1" >
+        <div class="title-pro-all">
+            <div class="logo-lap" style="background-image: url(../static/image/bgrhom.jpg); background-size:cover; filter: blur(5px); position: relative;">
+                
+            </div>
+            <span style="position: absolute; top: 18%; color: white; font-size: 32px; font-weight: bold;">TRUE GAMING. SOME ARE PC, WE ARE GAMING</span>
+            <!--        <h1 class="title-all-product-item">MSI</h1>-->
+
+        </div>
+        <div class="filter-product">
+            <div class="title-filter-product" style="background-image: url(../static/image/OIP.jpg); background-size: cover;">
+                <div style="border-left: 3px solid #111111;padding-left: 8px"> <strong>Filter</strong></div>
+            </div>
+            <div class="filter">
+                <div class="title-filter">
+                    Brand
+                </div>
+                <div class="filter-items">
+
+                    
+                    {% for brand in brands%}
+                    <div class="filter-item">
+                    
+            <a href="{% url 'laptop_list' %}?brand={{ brand.id}}">{{ brand }}</a>
+                  
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                   {% endfor %}
+                </div>
+            </div>
+            <div class="filter">
+                
+            </div>
+            <div class="filter">
+                <div class="title-filter">
+                    Series CPU
+                </div>
+                <div class="filter-items">
+
+                    <div class="filter-item">
+                     <a href="{% url 'laptop_list' %}?cpu_type=i3"> Core i3 </a>
+
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    <div class="filter-item">
+                     <a href="{% url 'laptop_list' %}?cpu_type=i5"> Core i5 </a>
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    <div class="filter-item">
+                     <a href="{% url 'laptop_list' %}?cpu_type=i7"> Core i7 </a>
+
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    <div class="filter-item">
+                     <a href="{% url 'laptop_list' %}?cpu_type=i9"> Core i9 </a>
+
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+            <div class="filter">
+                <div class="title-filter">
+                    RAM
+                </div>
+
+
+                <div class="filter-items">
+                
+                    <div class="filter-item">
+                    <a    href="{% url 'laptop_list' %}?ram_size=4"   style="text-decoration: none;" class="filter-link"> 4 GB</a>
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    <div class="filter-item">
+                    <a href="{% url 'laptop_list' %}?ram_size=8"  style="text-decoration: none;" class="filter-link">8 GB</a>
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+                    <div class="filter-item">
+                    <a href="{% url 'laptop_list' %}?ram_size=16"  style="text-decoration: none;"class="filter-link">16 GB</a>
+
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"class="filter-link"></i></div>
+                    </div>
+                    <div class="filter-item">
+                    <a href="{% url 'laptop_list' %}?ram_size=32"  style="text-decoration: none;"class="filter-link">32 GB</a>
+
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"class="filter-link"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+                <div class="title-filter">
+                   
+                </div>
+                <div class="filter-items">
+                    <div class="filter-item">
+                    <a href="{% url 'laptop_list' %}"  style="text-decoration: none;">ALL</a>
+
+              
+                        <div class="tick"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="filter-another"  style="background-image: url(../static/image/OIP.jpg); background-size: cover;">
+            <div class="title-filter">
+                <strong>
+                    order by
+                </strong>
+
+            </div>
+            <div class="filter-items">
+<!--                <div class="filter-item-another">Bán chạy-->
+<!--                    <div class="tick tick-another"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>-->
+<!--                </div>-->
+                <div class="filter-item-another" style="background: white;">
+                <a href="{% url 'laptop_list' %}?sort_by=price_asc" class="{% if request.GET.sort_by == 'price_asc' %}selected{% endif %}"  > Price increase </a>
+              
+                    <div class="tick tick-another"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                </div>
+                <div class="filter-item-another" style="background: white;">
+                <a href="{% url 'laptop_list' %}?sort_by=price_desc" class="{% if request.GET.sort_by == 'price_desc' %}selected{% endif %}" >Price decrease</a>
+                
+                    <div class="tick tick-another"><i class="fas fa-check" style="position: absolute;  left: 7px"></i></div>
+                </div>
+                <div class="price-filter">
+                <div class="filter-item-another" style="cursor: auto; background: white;" >
+                    <input class="input-filter-product" placeholder="Lowest price">
+                </div>
+                    <span style="line-height: 2; text-align: center">-</span>
+                <div class="filter-item-another" style="cursor: auto; background: white;">
+                    <input class="input-filter-product" placeholder="Highest price">
+                </div>
+                </div>
+                <button class="btn-search-filter">Tìm</button>
+
+            </div>
+        </div>
+        <div class="cover-all-product">
+            <div class="all-product-cover">                 
+                        {% for laptop in object_list %}
+                        {% if laptop.is_active%}
+                           </td>
+                        <div class="hover-all-product">
+                    <a class="all-product-item" href="{% url "laptop_detail" pk=laptop.pk %}?ram={{laptop.ram.pk}}&ssd={{laptop.ssd.pk}}">
+                 
+                    
+                        <div class="status-sale">-11%</div>
+                       
+                        <div class="img-all-product-item"
+                     
+                             style="background-image: url( {{laptop.images.first.image.url}} )">
+                            <!--                        <img src="../static/image/all-product/unnamed.jpg" style="visibility: hidden;" />-->
+                        </div>
+                        {% if laptop.quantity < 1 %}
+                        <div class="status">HẾT HÀNG</div>
+                        {% endif %}
+                        <div class="infor-all-product-item">
+                            {{laptop.name}}
+                        </div>
+                        <div class="price-all-product-item">
+                          {{laptop.price }}
+                        </div>
+                        <div class="sale-all-product-item">
+                            <span class="origin-price">{{laptop.price}}đ</span> <span>11%</span>
+                        </div>
+                    </a>
+                </div>
+                      
+                        {% endif %}
+                      
+                       
+
+                        {% endfor %}
+                    </ul>
+  
+                    
+                    
+                
+
+
+            </div>
+        </div>
+        <div class="dots-slick"></div>
+    </div>
+</div>
+<div class="js-login" id="login-main" style="z-index: 1000">
+    <div class="login js-login-container">
+        <div class="title-login">
+            <a class="close-login" role="button"></a>
+            <h1 class="title-login-main">Đăng nhập</h1>
+            <p class="slogan-login">Hãy tham gia cùng chúng tôi</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="login-form">
+            <div class="input-login">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu" required type="password">
+            </div>
+            <button class="btn-login">Đăng nhập</button>
+        </form>
+        <div class="forgot-pass-main">
+            <a class="forgot-pass js-forgot-pass" role="button">Quên mật khẩu</a>
+        </div>
+        <div class="border"></div>
+        <div class="new-account">
+            <a class="btn-new-account js-new-account" role="button">Tạo tài khoản mới</a>
+        </div>
+    </div>
+</div>
+<div class="js-forgot" id="forgot-main" style="z-index: 1000">
+    <div class="forgot js-forgot-container">
+        <div class="title-forgot">
+            <a class="close-forgot" role="button"></a>
+            <h1 class="title-forgot-main">Quên mật khẩu</h1>
+            <p class="slogan-forgot">Chúng tôi sẽ hỗ trợ tận tình</p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="forgot-form">
+            <div class="input-forgot">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu gần nhất" required type="password">
+            </div>
+            <button class="btn-forgot">Tìm tài khoản</button>
+        </form>
+        <div class="border"></div>
+        <div class="come-back">
+            <a class="btn-come-back js-come-back" role="button">Quay trở lại đăng nhập</a>
+        </div>
+    </div>
+</div>
+<div class="js-register" id="register-main" style="z-index: 1000">
+    <div class="register js-register-container">
+        <div class="title-register">
+            <a class="close-register js-close-icon" role="button"><i class="fas fa-times"></i></a>
+            <h1 class="title-register-main" style="margin: 0; line-height: 1.4;">Đăng kí</h1>
+            <p class="slogan-register">Fast and easy </p>
+        </div>
+        <div class="border"></div>
+        <form action="" class="register-form">
+            <div class="input-register">
+                <input class="input-items" placeholder="Họ và tên" required type="text">
+                <input class="input-items" placeholder="Tên đăng nhập" required type="text">
+                <input class="input-items" placeholder="Mật khẩu mới" required type="password">
+                <input class="input-items" placeholder="Địa chỉ nhận hàng" required type="password">
+                <input class="input-items" placeholder="Email liên hệ" required type="password">
+            </div>
+            <div class="register-div">
+                <a class="btn-register" role="button">Đăng kí</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!--Back to top-->
+<button id="myBtn">&#8593;</button>
+</body>
+<script src="../js/register.js"></script>
+<script src="../js/register.js"></script>
+<script crossorigin="anonymous" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        referrerpolicy="no-referrer"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="../js/nav-responsive.js"></script>
+<script src="../js/BackToTop.js"></script>
+<script src="../js/Scroll-Indicator.js"></script>
+<script src="../js/visibleCart.js"></script>
+<script src="../js/slick-all-product.js"></script>
+<script src="../js/click-filter.js"></script>
+{% endblock %}
+</html>
+
+<script>
+
+const filterLinks = document.querySelectorAll('.filter-link');
+
+filterLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    // Remove 'selected' class from all filter links
+    filterLinks.forEach(link => link.classList.remove('selected'));
+    // Add 'selected' class to the clicked filter link
+    this.classList.add('selected');
+  });
+});
+
+</script>
