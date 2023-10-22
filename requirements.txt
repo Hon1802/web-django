@@ -4,3 +4,4 @@ scikit_learn==1.2.2
 mysqlclient==2.1.1
 python-dotenv==1.0.0
 paypalrestsdk==1.13.1
+Pillow==10.1.0
