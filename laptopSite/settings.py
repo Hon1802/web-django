@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [ 'shop-shoes-hubg.onrender.com']
+ALLOWED_HOSTS = [ 'laptop-shop-wuu7.onrender.com']
 # Application definition
 INSTALLED_APPS = [
     "CustomerSite",
